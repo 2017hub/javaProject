@@ -1,5 +1,7 @@
 package com.documendation.designpatterns.common;
 
+import java.util.Arrays;
+
 /**
  * 数组排序
  */
@@ -21,6 +23,17 @@ public class ArraySort {
         //排序后的输出数组
         for (int i = 0; i <arr.length ; i++) {
             System.out.println("--->排序后："+arr[i]);
+        }
+    }
+
+
+    //快速排序
+    public static void quiteSort(){
+        int[] arr={1,7,3,89,230,0,45,67};
+
+        Arrays.sort(arr);
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.println("快速排序："+arr[i]);
         }
     }
 }

@@ -12,7 +12,8 @@ public class DesignpatternsApplicationTests {
 
     @Test
     public void contextLoads() {
-        ArraySort.arrSort();
+      //  ArraySort.arrSort();
+        ArraySort.quiteSort();
     }
 
 }
