@@ -1,6 +1,7 @@
 package com.documendation.designpatterns;
 
 import com.documendation.designpatterns.common.ArraySort;
+import com.documendation.designpatterns.common.PrintParrent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +14,8 @@ public class DesignpatternsApplicationTests {
     @Test
     public void contextLoads() {
       //  ArraySort.arrSort();
-        ArraySort.quiteSort();
+       // ArraySort.quiteSort();
+      //  PrintParrent.getParrent();
     }
 
 }
