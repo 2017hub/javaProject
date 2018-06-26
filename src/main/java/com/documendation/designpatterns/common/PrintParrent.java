@@ -10,7 +10,7 @@ public class PrintParrent {
               // getRightTriangle(6);
                 //getLeftTriangle();
                //getRhombus(4);
-                getHowllowRhombus();
+               // getHowllowRhombus();
             }
 
     /**
