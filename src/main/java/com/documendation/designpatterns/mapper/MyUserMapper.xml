@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.documendation.designpatterns.mapper.MyUserMapper">
+  <resultMap id="BaseResultMap" type="com.documendation.designpatterns.entity.MyUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="emaile" jdbcType="VARCHAR" property="emaile" />
+    <result column="jonin_time" jdbcType="TIMESTAMP" property="joninTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, pwd, phone, emaile, jonin_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from my_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from my_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.documendation.designpatterns.entity.MyUser">
+    insert into my_user (id, username, pwd, 
+      phone, emaile, jonin_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{emaile,jdbcType=VARCHAR}, #{joninTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.documendation.designpatterns.entity.MyUser">
+    insert into my_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="emaile != null">
+        emaile,
+      </if>
+      <if test="joninTime != null">
+        jonin_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="emaile != null">
+        #{emaile,jdbcType=VARCHAR},
+      </if>
+      <if test="joninTime != null">
+        #{joninTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.documendation.designpatterns.entity.MyUser">
+    update my_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="emaile != null">
+        emaile = #{emaile,jdbcType=VARCHAR},
+      </if>
+      <if test="joninTime != null">
+        jonin_time = #{joninTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.documendation.designpatterns.entity.MyUser">
+    update my_user
+    set username = #{username,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      emaile = #{emaile,jdbcType=VARCHAR},
+      jonin_time = #{joninTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
