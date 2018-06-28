@@ -8,11 +8,8 @@ spring:
     url: jdbc:mysql://localhost:3306/mydata?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 123456
-
-
-
-thymeleaf:
-     cache: false
+  thymeleaf:
+    cache: false
 
 mybatis:
   typeAliasesPackage: com.documendation.designpatterns.entity

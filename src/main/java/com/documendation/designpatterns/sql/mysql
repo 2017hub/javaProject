@@ -1,0 +1,22 @@
+用存储过程添加数据。
+DELIMITER $$
+
+USE `mydata`$$
+
+DROP PROCEDURE IF EXISTS `adduser7`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `adduser7`()
+BEGIN
+
+     SET @i=1000;
+
+     WHILE @i<=2000
+
+     DO
+
+     INSERT INTO my_user(username,pwd,phone,emaile,jonin_time)VALUES(CONCAT('wen',@i),'123456','15285157467','1234567@qq.com','2018-02-06 12:30:09');
+    SET @i=@i+1;
+	END WHILE;
+    END$$
+
+DELIMITER ;

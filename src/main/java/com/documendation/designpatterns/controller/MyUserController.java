@@ -4,6 +4,7 @@ import com.documendation.designpatterns.entity.MyUser;
 import com.documendation.designpatterns.service.MyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -37,12 +38,12 @@ public class MyUserController {
     public Boolean addMyUser(){
         Boolean flag=false;
         MyUser myUser1=new MyUser();
-        myUser1.setId(3);
-        myUser1.setUsername("李Wu");
+        myUser1.setId(4);
+        myUser1.setUsername("李奥");
         myUser1.setPwd("123456");
-        myUser1.setPhone("1529887890");
-        myUser1.setEmaile("123567@qq.com");
-        String str="2019-07-08 11:09:00";
+        myUser1.setPhone("15298870992");
+        myUser1.setEmaile("123567567@qq.com");
+        String str="2019-07-08 11:03:00";
         Timestamp timestamp=Timestamp.valueOf(str);
         myUser1.setJoninTime(timestamp);
                int rows= myUserService.insert(myUser1);

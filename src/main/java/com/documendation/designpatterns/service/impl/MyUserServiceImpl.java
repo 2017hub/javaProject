@@ -5,8 +5,10 @@ import com.documendation.designpatterns.mapper.MyUserMapper;
 import com.documendation.designpatterns.service.MyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional//添加事务管理注解
 public class MyUserServiceImpl implements MyUserService {
     @Autowired
     MyUserMapper myUserMapper;
