@@ -19,4 +19,6 @@ public class HelloController {
         System.out.println("---->"+myUser.getUsername());
         return  "hello";
     }
+
+
 }

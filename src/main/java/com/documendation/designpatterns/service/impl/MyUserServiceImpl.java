@@ -18,12 +18,13 @@ public class MyUserServiceImpl implements MyUserService {
 
     @Override
     public int insert(MyUser record) {
-        return 0;
+        return myUserMapper.insert(record);
     }
 
     @Override
     public int insertSelective(MyUser record) {
-        return 0;
+
+        return myUserMapper.insertSelective(record);
     }
 
     @Override
